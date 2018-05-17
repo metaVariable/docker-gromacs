@@ -1,5 +1,7 @@
 # docker for gromacs
 
+> Note: if `gmx` command not found, please exec `. /usr/local/gromacs/bin/GMXRC` to configure the PATH.
+
 ## gromacs 5.1.4
 
 - Dockerfile: [gromacs-5.1.4/Dockerfile](gromacs-5.1.4/Dockerfile)
