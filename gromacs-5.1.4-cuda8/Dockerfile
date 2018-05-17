@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM nvidia/cuda:8.0-devel
 
 MAINTAINER metaVariable
 
@@ -15,7 +15,8 @@ RUN wget -P /tmp ftp://ftp.gromacs.org/pub/gromacs/gromacs-${GROMACS_VERSION}.ta
 
 RUN mkdir -p /opt/gromacs-${GROMACS_VERSION}/build && \
     cd /opt/gromacs-${GROMACS_VERSION}/build && \
-    cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON && \
+    cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON \
+             -DGMX_GPU=ON -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda && \
     make -j$(nproc) && \
     make install
 
