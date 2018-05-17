@@ -1,10 +1,8 @@
 # docker for gromacs
 
-## Usage
+## gromacs 5.1.4
 
-### gromacs 5.1.4
-
-[Dockerfile](gromacs-5.1.4/Dockerfile)
+[gromacs-5.1.4/Dockerfile](gromacs-5.1.4/Dockerfile)
 
 ```sh
 # build
